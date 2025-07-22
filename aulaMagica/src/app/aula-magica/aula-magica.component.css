@@ -1,0 +1,178 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 80vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.aula-magica-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 2rem 1rem;
+  gap: 1.5rem;
+}
+
+.title {
+  font-size: 50px;
+  color: #2c3e50;
+  margin: 0;
+  text-align: center;
+}
+
+/*formulario */
+.prompt-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 640px;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* el textarea grande, redondeado y suave */
+.prompt-textarea {
+  width: 100%;
+  padding: 1.2rem;
+  font-size: 1rem;
+  line-height: 1.4;
+  border: 2px solid #e0d7fa;           /* pastel morado claro */
+  border-radius: 1.5rem;               /* super redondeado */
+  background: #f1e7ff79;                 /* fondo muy claro */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.252);
+  resize: vertical;
+  min-height: 5rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  color: #000;
+}
+
+.prompt-textarea:focus {
+  border-color: #a084f7;               /* morado medio */
+  box-shadow: 0 4px 16px rgba(73, 26, 213, 0.3);
+  outline: none;
+}
+
+/* botón junto al textarea (en columna) */
+.prompt-button {
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, #00bcd4, #0097a7);
+  border: none;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  width: auto;
+}
+
+.prompt-button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.prompt-button:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+}
+/* fin text area*/
+
+/*boton css*/
+/* From Uiverse.io by Spacious74 */ 
+button {
+  font-size: 1.4em;
+  padding: 0.6em 0.8em;
+  border-radius: 0.5em;
+  border: none;
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 2px 2px 3px #000000b4;
+}
+
+.container {
+  position: relative;
+  padding: 3px;
+  background: linear-gradient(90deg, #03a9f4, #f441a5);
+  border-radius: 0.9em;
+  transition: all 0.4s ease;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  border-radius: 0.9em;
+  z-index: -10;
+  filter: blur(0);
+  transition: filter 0.4s ease;
+}
+
+.container:hover::before {
+  background: linear-gradient(90deg, #03a9f4, #f441a5);
+  filter: blur(1.2em);
+}
+.container:active::before {
+  filter: blur(0.2em);
+}
+ /*boton fin*/
+
+.error {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+.image-wrapper {
+  width: 100%;
+  max-width: 800px;
+  height: 600px;
+  padding-bottom: 56%; /* ratio 16:9 */
+  position: relative;
+  background-color: #fafafa;
+  border: 2px dashed #cfd8dc;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.image-wrapper img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-outline {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background: white;
+  border: 2px solid rgb(253, 251, 239);
+  color: #007c91;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.btn-outline:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.feedback {
+  color: #00bcd4;
+  font-size: 1.1rem;
+  text-align: center;
+  max-width: 600px;
+}
+.feedback.error {
+  color: #e74c3c;
+}

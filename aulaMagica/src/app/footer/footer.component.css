@@ -1,0 +1,39 @@
+.app-footer {
+  padding: 10px 20px;
+  background-color: transparent; /* o un color suave si prefieres */
+  color: #2c3e50;
+  
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.footer-logo {
+  height: 40px;
+  width: auto;
+}
+
+/* Texto central */
+.footer-text {
+  font-size: 0.9rem;
+  color: #2c3e50;
+}
+
+/* Navegación */
+.footer-nav a {
+  margin-left: 1.5rem;
+  text-decoration: none;
+  color: #2c3e50;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.footer-nav a:hover {
+  color: #007c91;
+}

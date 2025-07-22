@@ -1,0 +1,85 @@
+/* 1) Contenedor full-screen que no interfiere con clicks */
+.background-shapes {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: -1;
+  background-color: #FEFBEF; /* fondo crema suave */
+}
+
+/* 2) Base para cada forma */
+.background-shapes .shape {
+  position: absolute;
+  opacity: 0.35;
+}
+
+/* 3) CÍRCULO grande (esquina superior izquierda) */
+.background-shapes .circle {
+  width: 30vw;
+  height: 30vw;
+  top: -10vw;
+  left: -10vw;
+  background-color: #FDDCDC; /* rosa pastel */
+  border-radius: 50%;
+}
+
+/* 4) TRIÁNGULO (arriba a la derecha) */
+.background-shapes .triangle {
+  width: 0; height: 0;
+  top: 5vh;
+  right: -10vw;
+  border-left: 20vw solid transparent;
+  border-right: 20vw solid transparent;
+  border-bottom: 20vw solid #FEF3C7; /* amarillo pastel */
+}
+
+/* 5) ESTRELLA (centro-derecha) */
+.background-shapes .star {
+  width: 15vw;
+  height: 15vw;
+  top: 40vh;
+  right: 10vw;
+  background-color: #FDDCDC; /* mismo rosa pastel */
+  clip-path: polygon(
+    50% 0%, 61% 35%, 98% 35%,
+    68% 57%, 79% 91%, 50% 70%,
+    21% 91%, 32% 57%, 2% 35%,
+    39% 35%
+  );
+  transform: rotate(15deg);
+}
+
+/* 6) RECTÁNGULO REDONDEADO (abajo-derecha) */
+.background-shapes .rounded-rect {
+  width: 25vw;
+  height: 25vw;
+  bottom: -5vw;
+  right: -5vw;
+  background-color: #DBEAFE; /* azul pastel */
+  border-radius: 20%;
+  transform: rotate(-25deg);
+}
+
+/* 7) TRIÁNGULO pequeño (abajo-izquierda) */
+.background-shapes::after {
+  content: "";
+  position: absolute;
+  width: 15vw; height: 15vw;
+  bottom: 5vh;
+  left: 10vw;
+  background-color: #DCFCE7; /* verde pastel */
+  clip-path: polygon(100% 0, 0 100%, 100% 100%);
+  opacity: 0.25;
+}
+/* 8) CÍRCULO pequeño (centro-izquierda) */
+.background-shapes .small-circle {
+  width: 10vw;
+  height: 10vw;
+  top: 50vh;
+  left: 5vw;
+  background-color: #FEE2E2; /* rosa claro */
+  border-radius: 50%;
+  opacity: 0.5;
+}

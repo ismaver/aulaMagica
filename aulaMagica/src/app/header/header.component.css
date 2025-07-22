@@ -1,0 +1,50 @@
+.app-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;      
+}
+
+/* Contenedor centrado */
+.header-inner {
+  max-width: 1200px;       /* ancho máximo del contenido */
+  margin: 0 auto;          /* centro */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;      /* espacio interior */
+  box-sizing: border-box;
+}
+
+.logo {
+  height: 70px;
+  width: auto;
+  padding-right: 25px;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 2rem;           /* espacio entre enlaces */
+  position: relative;
+}
+
+.nav-menu a {
+  position: relative;      /* necesario para el pseudo-elemento */
+  text-decoration: none;
+  color: #2c3e50;
+  font-weight: 500;
+  padding-bottom: 0.25rem;
+  transition: color 0.2s;
+}
+
+.nav-menu a:hover {
+  color: #007c91;
+}
+
+.nav-menu a.active::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: -2px;
+  width: 100%; height: 3px;
+  background: #00bcd4;
+  border-radius: 2px;
+}

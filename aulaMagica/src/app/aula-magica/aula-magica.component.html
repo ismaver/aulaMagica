@@ -1,0 +1,41 @@
+<div class="aula-magica-container">
+  <!-- Título -->
+  <h1 class="title">Aula Mágica</h1>
+
+  <!-- Prompt & Generar -->
+  <form (ngSubmit)="onGenerate()" class="prompt-form">
+
+    <textarea class="prompt-textarea" [(ngModel)]="prompt" name="prompt" placeholder="Describe la escena…"
+      [disabled]="loading" rows="4"></textarea>
+
+    <button type="submit" class="prompt-button" [disabled]="loading || !prompt.trim()">
+      {{ loading ? 'Generando…' : 'Generar Imagen' }}
+    </button>
+
+  </form>
+
+  <!-- Error -->
+  <p class="error" *ngIf="error">{{ error }}</p>
+
+  <!-- Imagen generada -->
+  <div class="image-wrapper" *ngIf="imageUrl">
+    <img src="http://localhost:5000/imagen-ultima" alt="Imagen generada" />
+  </div>
+  
+
+  <!-- Interacción Q&A -->
+  <div class="action-buttons" *ngIf="questions.length">
+    <button (click)="onPlay()" class="btn-outline">
+      🔊 Escuchar pregunta
+    </button>
+    <button (click)="onRecord()" class="btn-outline">
+      {{ recording ? '⏹️ Detener' : '🎤 Responder' }}
+    </button>
+    <button (click)="onNext()" [disabled]="!showNext" class="btn-outline">
+      ➡️ Siguiente pregunta
+    </button>
+  </div>
+
+  <!-- Feedback -->
+  <p class="feedback" *ngIf="feedback">{{ feedback }}</p>
+</div>
