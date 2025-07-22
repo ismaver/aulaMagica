@@ -12,7 +12,7 @@ interface SttRes    { text: string; }
 
 @Injectable({ providedIn: 'root' })
 export class ApiService {
-  private base = '/api';
+  private base = '';
 
   constructor(private http: HttpClient) {}
 
