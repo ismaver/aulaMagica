@@ -18,5 +18,8 @@
     "changeOrigin": true
   },
   "/healthz":    { "target":"http://localhost:5000", "secure":false,
+    "changeOrigin": true },
+  "/ultima-image":   { "target":"http://localhost:5000", "secure":false,
     "changeOrigin": true }
+    
 }

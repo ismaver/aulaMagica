@@ -38,7 +38,7 @@ export class AulaMagicaComponent {
     // 1) Generar imagen
     this.api.generateImage(this.prompt).subscribe({
       next: res => {console.log(res)
-        this.imageUrl = res.image_url},
+        this.imageUrl = "/ultima-imagen"},
       error: err => this.error = err.message || 'Error al generar imagen.',
       complete: () => {
         // 2) Generar preguntas
