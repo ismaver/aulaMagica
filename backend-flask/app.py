@@ -42,7 +42,7 @@ def home():
     """Sirve la página principal."""
     return render_template('index.html')
 
-@app.route('/imagen-ultima')
+@app.route('/ultima-imagen')
 def imagen_ultima():
     # Nombre fijo de tu imagen
     filename = 'generated_image.png'
